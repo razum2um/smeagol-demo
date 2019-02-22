@@ -1,0 +1,1 @@
+#:smeagol-demo.ttl{:salaries [#:smeagol-demo.ttl{:recurrance :monthly, :name "me", :amount 100.0} #:smeagol-demo.ttl{:recurrance :yearly, :name "myself", :amount 2400.0} #:smeagol-demo.ttl{:recurrance :monthly, :name "I", :amount 100.0}]}
