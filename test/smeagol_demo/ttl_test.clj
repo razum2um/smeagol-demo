@@ -16,6 +16,7 @@
 (ns smeagol-demo.ttl-test
   (:require
    [clojure.test :refer :all]
+   [clojure.java.io :as io]
    [smeagol-demo.ttl :as sut]))
 
 (def credit
@@ -28,16 +29,7 @@
                 :name "customer1"
                 :amount 300.00}]})
 
-(def debts
-  #::sut{:salaries [#::sut{:recurrance :monthly
-                           :name "me"
-                           :amount 100.00}
-                    #::sut{:recurrance :yearly
-                           :name "myself"
-                           :amount 2400.00}
-                    #::sut{:recurrance :monthly
-                           :name "I"
-                           :amount 100.00}]})
+(def debts (-> (io/resource "debts.edn") slurp clojure.edn/read-string))
 
 (deftest server-spec
   (testing
