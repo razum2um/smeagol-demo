@@ -17,6 +17,7 @@
   (:require
    [clojure.test :refer :all]
    [clojure.java.io :as io]
+   [data-test :refer [defdatatest]]
    [smeagol-demo.ttl :as sut]))
 
 (def credit
@@ -36,3 +37,7 @@
     "test the server spec"
     (is (= 400.0
            (sut/calculate-debts-monthly debts)))))
+
+
+(defdatatest should-calculate-debts-monthly [input expected]
+  (is (= expected (sut/calculate-debts-monthly input))))
